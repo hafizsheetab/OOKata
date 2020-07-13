@@ -17,6 +17,7 @@ public class DataOfShapes {
         return sizes[index];
     }
     public int numberOfShapes(){
+
         return types.length;
     }
 
