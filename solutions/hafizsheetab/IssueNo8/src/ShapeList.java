@@ -1,14 +1,17 @@
 public class ShapeList {
-    private DataOfShapes dataOfShapes;
+    private DataOfShapes [] dataOfShapes;
 
     public ShapeList(double[] sizes, String[] types) {
-        dataOfShapes = new DataOfShapes(types,sizes);
+         DataOfShapes[] dataOfShapes = new DataOfShapes[sizes.length] ;
+         dataOfShapes = assignSizeAndType(sizes,types,dataOfShapes);
+         this.dataOfShapes=dataOfShapes;
+
     }
     public double totalArea() {
         double total = 0;
         Shape shape;
-        for (int index = 0; index < dataOfShapes.numberOfShapes(); index++) {
-            shape = shapeType(dataOfShapes,index);
+        for (int i = 0; i < dataOfShapes.length; i++) {
+            shape = shapeType(dataOfShapes[i]);
             total += shape.area();
         }
 
@@ -19,21 +22,27 @@ public class ShapeList {
 
         double total = 0;
         Shape shape;
-        for (int index = 0; index < dataOfShapes.numberOfShapes(); index++) {
-            shape = shapeType(dataOfShapes,index);
+        for (int i = 0; i < dataOfShapes.length; i++) {
+            shape = shapeType(dataOfShapes[i]);
             total += shape.perimeter();
         }
 
         return total;
     }
 
-    private static Shape shapeType(DataOfShapes dataOfShape, int index) {
-        if(dataOfShape.getType(index)=="square"){
-            return new Square(dataOfShape.getSize(index));
+    private static Shape shapeType(DataOfShapes dataOfShape) {
+        if(dataOfShape.getType()=="square"){
+            return new Square(dataOfShape.getSize());
         }
         else{
-            return new Circle(dataOfShape.getSize(index));
+            return new Circle(dataOfShape.getSize());
         }
+    }
+    private static DataOfShapes[] assignSizeAndType(double[] sizes,String [] types,DataOfShapes[] dataOfShapes){
+        for(int i=0;i<sizes.length;i++){
+            dataOfShapes[i] = new DataOfShapes(sizes[i],types[i]);
+        }
+        return dataOfShapes;
     }
 
 

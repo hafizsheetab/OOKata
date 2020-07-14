@@ -1,24 +1,19 @@
 import java.lang.reflect.Array;
 
 public class DataOfShapes {
-    private String [] types;
-    private double [] sizes;
+    private String  type;
+    private double  size;
 
-    public DataOfShapes(String[] types, double[] sizes) {
-        this.types = types;
-        this.sizes = sizes;
+    public DataOfShapes(double size,String type) {
+        this.type = type;
+        this.size = size;
     }
 
-    public String getType(int index) {
-        return types[index];
+    public String getType() {
+        return type;
     }
 
-    public double getSize(int index) {
-        return sizes[index];
+    public double getSize() {
+        return size;
     }
-    public int numberOfShapes(){
-
-        return types.length;
-    }
-
 }

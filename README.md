@@ -59,7 +59,6 @@ Following is the recommended way to submit a solution.
 * If any of the language above seems unfamiliar to you. Just commit and push. You cannot do much harm anyway and no one is going to be mad on you about anything.
 
 
-
 ---
 ## How to check other people's solutions
 Simplest way to see other people's solutions is to see their branch's code online. However, if you want to build and run their code, you should do the followings:
