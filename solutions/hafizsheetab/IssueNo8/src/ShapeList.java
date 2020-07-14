@@ -20,6 +20,14 @@ public class ShapeList {
         }
         return shape;
     }
+    private static Shape getShapeType(String type){
+        if(type.equals("square")){
+            return new Square();
+        }
+        else{
+            return new Circle();
+        }
+    }
 
     public double totalArea() {
         double total = 0;
@@ -37,14 +45,7 @@ public class ShapeList {
         return total;
     }
 
-    private static Shape getShapeType(String type){
-        if(type.equals("square")){
-            return new Square();
-        }
-        else{
-            return new Circle();
-        }
-    }
+
 
 
 }
