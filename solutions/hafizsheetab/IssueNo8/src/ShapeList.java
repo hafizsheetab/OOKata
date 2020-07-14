@@ -1,25 +1,26 @@
 public class ShapeList {
-   private double[] sizes;
-   private String[] types;
+   private double[] size;
+   private String[] type;
    private  int numberOfShapes;
-   private Shape [] shapes;
+   private Shape [] shape;
 
-    public ShapeList(double[] sizes, String[] types) {
-       this.sizes = sizes;
-       this.types = types;
-       this.numberOfShapes = sizes.length;
-       this.shapes=setShapes(sizes,types);
+    public ShapeList(double[] size, String[] type) {
+       this.size = size;
+       this.type = type;
+       this.numberOfShapes = size.length;
+       this.shape =setShapes(size, type);
 
     }
 
-    private Shape[] setShapes(double[] sizes, String[] types) {
+    private Shape[] setShapes(double[] size, String[] type) {
         Shape[] shape = new Shape[numberOfShapes];
         for(int i=0;i<numberOfShapes;i++){
-            shape[i] = getShapeType(types[i]);
-            shape[i].setSize(sizes[i]);
+            shape[i] = getShapeType(type[i]);
+            shape[i].setSize(size[i]);
         }
         return shape;
     }
+
     private static Shape getShapeType(String type){
         if(type.equals("square")){
             return new Square();
@@ -32,7 +33,7 @@ public class ShapeList {
     public double totalArea() {
         double total = 0;
         for (int i = 0; i < numberOfShapes; i++) {
-            total += shapes[i].area();
+            total += shape[i].area();
         }
         return total;
     }
@@ -40,13 +41,10 @@ public class ShapeList {
     public double totalPerimeter() {
         double total = 0;
         for (int i = 0; i < numberOfShapes; i++) {
-            total += shapes[i].perimeter();
+            total += shape[i].perimeter();
         }
         return total;
     }
-
-
-
 
 }
 
