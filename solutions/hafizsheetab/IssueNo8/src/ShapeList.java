@@ -8,11 +8,11 @@ public class ShapeList {
        this.size = size;
        this.type = type;
        this.numberOfShapes = size.length;
-       this.shape =setShapes(size, type);
+       this.shape =setShapes();
 
     }
 
-    private Shape[] setShapes(double[] size, String[] type) {
+    private Shape[] setShapes() {
         Shape[] shape = new Shape[numberOfShapes];
         for(int i=0;i<numberOfShapes;i++){
             shape[i] = getShapeType(type[i]);
