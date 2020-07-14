@@ -1,17 +1,18 @@
 public class Square implements Shape {
-    private double length;
+    private double size;
 
-    public Square(double length) {
-        this.length = length;
+    @Override
+    public void setSize(double size) {
+        this.size = size;
     }
 
     @Override
     public double area() {
-        return length * length;
+        return size * size;
     }
 
     @Override
     public double perimeter() {
-        return 4 * length;
+        return 4 * size;
     }
 }
