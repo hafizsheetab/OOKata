@@ -30,12 +30,10 @@ public class ShapeList {
     }
 
     public double totalPerimeter() {
-
         double total = 0;
         for (int i = 0; i < numberOfShapes; i++) {
             total += shapes[i].perimeter();
         }
-
         return total;
     }
 
